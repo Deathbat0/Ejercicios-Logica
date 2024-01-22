@@ -1,8 +1,12 @@
+//DeathbatO
+
 import java.util.Scanner;
 
 public class AreaPoligono {
+    
+    public static Scanner sc = new Scanner(System.in);
+
     public static double areaPoligono(char pol){
-        Scanner sc = new Scanner(System.in);
         switch (pol) {
             case 'T':
                 double area, base, alrura;
@@ -26,11 +30,11 @@ public class AreaPoligono {
                 ancho = sc.nextDouble();
                 area = ancho*largo;
                 return area;
-        
+            
             default:
                 System.out.println("Esa no es una opcion");
                 break;
-        }
+            }
         return 0;
     }
     public static void main(String[] args) {
@@ -41,5 +45,6 @@ public class AreaPoligono {
         System.out.print("T para triangulo\nC para cuadrado\nR para rectangulo\nOpcion: ");
         pol = sc.nextLine().toUpperCase().charAt(0);
         System.out.println("El area del poligono es: "+areaPoligono(pol)+" unidades cuadradas"); 
+        sc.close();
     }
 }

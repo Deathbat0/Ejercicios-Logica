@@ -1,3 +1,5 @@
+// DeathbatO
+
 public class Fibonacci {   
     public static void main(String[] args) {
         double serie[] = new double [50];

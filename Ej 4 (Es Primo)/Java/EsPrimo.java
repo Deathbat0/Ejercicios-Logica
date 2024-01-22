@@ -1,3 +1,5 @@
+//DeathbatO
+
 public class EsPrimo {
     public static boolean esPrimo(int num){
         if(num == 2 || num == 7 || num == 5 || num == 3 || num == 11){
