@@ -1,27 +1,18 @@
 //DeathbatO
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Anagrama {
 
     public static boolean esAnagrama(String a, String b){
-        if(a.equals(b) || a.length() != b.length()){
-            return false;
-        }else{
-            int count = 0 ;
-            for(int i = 0;  i < a.length(); i++){
-                for(int j = 0; j < b.length(); j++){
-                    if(a.charAt(i) == b.charAt(j)){
-                        count++;
-                        break;
-                    }
-                }
-            }
-            if(count >= a.length()){
-                return true;
-            }
-        }
-        return false;
+        char[] arrayPalabra1 = a.toCharArray();
+        char[] arrayPalabra2 = b.toCharArray();
+
+        Arrays.sort(arrayPalabra1);
+        Arrays.sort(arrayPalabra2);
+
+        return Arrays.equals(arrayPalabra1, arrayPalabra2);
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
