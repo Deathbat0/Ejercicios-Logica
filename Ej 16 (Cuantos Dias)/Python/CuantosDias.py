@@ -8,9 +8,7 @@ def CalcularDifDias(fecha1, fecha2):
 
         f1 = dt.strptime(fecha1, '%d/%m/%Y')
         f2 = dt.strptime(fecha2, '%d/%m/%Y')
-
         dif = abs((f1-f2).days)
-
         return dif
     
     except ValueError as e:
