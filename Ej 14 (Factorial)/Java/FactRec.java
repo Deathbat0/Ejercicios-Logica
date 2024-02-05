@@ -5,11 +5,11 @@ import java.util.Scanner;
 public class FactRec {
 	
 	public static int Factorial(int n){
-		int result=1;
-		for(int i = 1 ; i <= n; i++){
-			result = result * i;
-		}
-		return result;
+		if(n == 0){
+            return 1;
+        }else{
+            return n * Factorial(n-1);
+        }
 	}
 	
 	public static void main(String[] args) {
