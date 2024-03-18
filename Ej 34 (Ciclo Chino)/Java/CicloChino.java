@@ -1,7 +1,10 @@
 import java.util.Scanner;
-
+/**
+ * @author DeathbatO
+ * 
+ */
 public class CicloChino {
-    
+
     public static void cicloSexagenario(int año) {
         // Array para almacenar los elementos y animales
         String[] elementos = {"Madera", "Fuego", "Tierra", "Metal", "Agua"};
