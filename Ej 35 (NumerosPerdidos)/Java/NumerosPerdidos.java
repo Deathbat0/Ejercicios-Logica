@@ -1,29 +1,48 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class NumerosPerdidos{
 
-    public static boolean ValidarArray(int [] arr){
-        if(arr.length == 0){
-            System.out.println("Error: Arreglo vacio");
-            return false;
+    public static List<Integer> findMissingNumbers(int[] arr) throws IllegalArgumentException {
+        // Verificar si el array es válido
+        if (arr == null || arr.length == 0) {
+            throw new IllegalArgumentException("El array de entrada no es válido");
         }
-        for(int i = 0; i < arr.length; i++){
-            if(arr[i] <= arr[i+1]){
-                System.out.println("ERROR: Arreglo no ordenado o elemento repetido");
-                return false;
+
+        // Verificar si el array está ordenado y no tiene elementos repetidos
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] >= arr[i + 1]) {
+                throw new IllegalArgumentException("El array de entrada no está ordenado o tiene elementos repetidos");
             }
         }
-        return true;
+
+        int min = arr[0];
+        int max = arr[arr.length - 1];
+        List<Integer> missingNumbers = new ArrayList<>();
+
+        // Calcular los números faltantes entre el mayor y el menor
+        for (int i = min + 1; i < max; i++) {
+            if (!contains(arr, i)) {
+                missingNumbers.add(i);
+            }
+        }
+
+        return missingNumbers;
+    }
+
+    private static boolean contains(int[] arr, int target) {
+        return Arrays.binarySearch(arr, target) >= 0;
     }
 
     public static void main(String[] args) {
-        int [] arr1 = {1, 2, 3, 5, 6, 9};
-        int [] arr2 = {1, 2, 6, 7, 6, 9};
-        int [] arr3 = {1, 2, 3, 10, 6, 9};
-        int [] arr4 = {};
+        int[] sortedArray = {1, 2, 4, 5, 7, 10};
 
-       
-        System.out.println("Validez del array: "+ValidarArray(arr4));
-    
+        try {
+            List<Integer> missing = findMissingNumbers(sortedArray);
+            System.out.println("Números faltantes: " + missing);
+        } catch (IllegalArgumentException e) {
+            System.err.println(e.getMessage());
+        }
     }
-
 }
