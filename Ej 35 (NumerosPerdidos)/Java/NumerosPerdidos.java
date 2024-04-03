@@ -2,6 +2,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * @author DeathabtO
+ */
 public class NumerosPerdidos{
 
     public static List<Integer> findMissingNumbers(int[] arr) throws IllegalArgumentException {
