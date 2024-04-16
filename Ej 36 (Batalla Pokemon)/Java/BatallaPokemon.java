@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class BatallaPokemon{
 
     // Método para calcular la efectividad del ataque
-    public static float calcularEfectividad(String tipoAtacante, String tipoDefensor) {
+    public static float calcularEfectividad(String tipoAtacante, String tipoDefensor){
         // Tabla de efectividad
         // El primer índice corresponde al tipo del atacante y el segundo al tipo del defensor
         Map<String, Map<String, Float>> efectividad = new HashMap<>();
@@ -41,7 +41,7 @@ public class BatallaPokemon{
         return efectividad.get(tipoAtacante).get(tipoDefensor);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Tipo del Pokémon atacante: ");
