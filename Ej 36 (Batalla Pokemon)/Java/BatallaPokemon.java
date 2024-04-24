@@ -13,25 +13,25 @@ public class BatallaPokemon{
         // Tabla de efectividad
         // El primer índice corresponde al tipo del atacante y el segundo al tipo del defensor
         Map<String, Map<String, Float>> efectividad = new HashMap<>();
-        efectividad.put("Agua", new HashMap<String, Float>() {{
+        efectividad.put("Agua", new HashMap<String, Float>(){{
             put("Agua", 1f);
             put("Fuego", 0.5f);
             put("Planta", 2f);
             put("Eléctrico", 1f);
         }});
-        efectividad.put("Fuego", new HashMap<String, Float>() {{
+        efectividad.put("Fuego", new HashMap<String, Float>(){{
             put("Agua", 2f);
             put("Fuego", 1f);
             put("Planta", 0.5f);
             put("Eléctrico", 1f);
         }});
-        efectividad.put("Planta", new HashMap<String, Float>() {{
+        efectividad.put("Planta", new HashMap<String, Float>(){{
             put("Agua", 0.5f);
             put("Fuego", 2f);
             put("Planta", 1f);
             put("Eléctrico", 1f);
         }});
-        efectividad.put("Eléctrico", new HashMap<String, Float>() {{
+        efectividad.put("Eléctrico", new HashMap<String, Float>(){{
             put("Agua", 1f);
             put("Fuego", 1f);
             put("Planta", 1f);
